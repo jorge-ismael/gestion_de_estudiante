@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Estudiantes - Login</title>
+
+    <!-- enlaces del CSS situados en  global -->
+     <link rel="stylesheet" href="global/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="global/css/index.css">
+    <link rel="stylesheet" href="global/css/header.css">
+    <link rel="stylesheet" href="global/css/footer.css">
+
+    <!-- enlace del CSS solo para el login -->
+    <link rel="stylesheet" href="global/css/login.css">
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <main class="login-container">
+        <h2>INICIO DE SESIÓN</h2>
+        <p>Ingrese sus credenciales para acceder al sistema segun su rol:
+            adm o Estudiante
+        </p>
+
+        <div class="login-box">
+            <form id="loginForm">
+                <label>Usuario</label>
+                <input type="text" id="username" required>
+
+                <label>Contraseña</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Ingresar</button>
+
+                <p id="errorMsg" class="error"></p>
+            </form>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+z
+    <!-- enlace con el JS siyuado en la carpeta global -->
+    <script src="../gestionEstudiante/global/js/login.js"></script>
+    <script src="/global/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

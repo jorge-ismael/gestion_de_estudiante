@@ -1,0 +1,30 @@
+<div id="header"></div>
+
+<h1>Panel del Administrador</h1>
+
+<form id="crearEstudianteForm">
+    <label>Usuario: <input type="text" id="inputUsuario" required></label><br>
+    <label>Contraseña: <input type="password" id="inputPassword" required></label><br>
+    <label>Nombre: <input type="text" id="inputNombre" required></label><br>
+    <label>Correo: <input type="email" id="inputCorreo" required></label><br>
+    <button type="submit">Crear estudiante</button>
+</form>
+
+<h2>Estudiantes existentes</h2>
+<table border="1" id="tablaEstudiantes">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<button id="btnCerrarSesionAdmin">Cerrar sesión</button>
+
+<div id="footer"></div>
+<script src="../../../global/js/admin.js"></script>
+
+

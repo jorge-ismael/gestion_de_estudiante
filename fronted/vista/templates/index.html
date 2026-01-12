@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="../css/index.css">
+
+
+</head>
+<body>
+    <header>
+        <h1>Gestión de Estudiantes - Universidad Afro-Americana de Africa Central</h1>
+        <h2>FACULTAD DE INGENIERIAS Y ARQUITECTURA</h2>
+    </header>
+
+    <main>
+        <section id="formulario">
+            <h2>Registrar Estudiante</h2>
+           <form id="formEstudiante">
+
+    <form id="formEstudiante">
+
+    <label>ID</label>
+    <input type="text" id="id" required>
+
+    <label>Usuario</label>
+    <input type="text" id="usuario" required>
+
+    <label>Contraseña</label>
+    <input type="password" id="password" required>
+
+    <label>Nombre</label>
+    <input type="text" id="nombre" required>
+
+    <label>Apellidos</label>
+    <input type="text" id="apellidos" required>
+
+    <label>Carrera</label>
+    <select id="carrera" required>
+        <option value="">Seleccione una carrera</option>
+        <option>Ingeniería Informática</option>
+        <option>Ingeniería Civil</option>
+        <option>Ingeniería Mecánica</option>
+        <option>Ingeniería Industrial</option>
+        <option>Ingeniería Petroquímica</option>
+        <option>Ingeniería Agroindustrial</option>
+        <option>Ingeniería Eléctrica</option>
+        <option>Arquitectura</option>
+    </select>
+
+    <label>Email</label>
+    <input type="email" id="email" required>
+
+    <button type="submit">Agregar</button>
+    <button onclick="cerrarSesionAdmin()" class="btn-volver-login">Volver al Login</button>
+
+
+</form>
+
+
+</form>
+
+</section>
+
+        <section id="lista">
+    <h2>Lista de Estudiantes</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Carrera</th>
+                <th>Email</th>
+                <th>Acciones</th> <!-- Columna para los botones eliminar  y ver informacion-->
+            </tr>
+        </thead>
+        <tbody id="tablaEstudiantes">
+            <!-- Las filas se llenarán desde JS -->
+        </tbody>
+    </table>
+</section>
+
+    </main>
+
+    <footer>
+        <div id="footer"></div>
+    </footer>
+
+
+    <script src="../../controlador/estudiante.js"></script>
+
+    <script>
+    function cerrarSesionAdmin() {
+        // El admin no necesita sessionStorage,
+        // así que simplemente lo redirigimos sin borrar nada importante.
+        
+        // Esto borra solo la sesión activa del ADMIN, NO los estudiantes.
+        sessionStorage.removeItem("estudianteActivo");
+
+        // Volver al login principal
+        window.location.href = "../../../index.html";
+    }
+</script>
+
+</body>
+</html>

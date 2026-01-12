@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+input, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Inputs y select con el mismo estilo */
+#formEstudiante input,
+#formEstudiante select {
+    width: 100%;          /* ancho completo */
+    padding: 8px 10px;    /* espacio interno uniforme */
+    margin: 5px 0 15px 0; /* separación entre campos */
+    border: 1px solid #ccc; /* borde gris claro */
+    border-radius: 5px;   /* bordes redondeados */
+    font-size: 16px;      /* tamaño de letra */
+    font-family: Arial, sans-serif; /* fuente uniforme */
+    box-sizing: border-box; /* incluye padding en el ancho */
+    background-color: #fff; /* fondo blanco */
+    appearance: none; /* elimina flecha predeterminada en algunos navegadores */
+}
+
+/* Para que el select tenga flecha personalizada (opcional) */
+#formEstudiante select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+/* Botón agregar */
+#formEstudiante button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#formEstudiante button:hover {
+    background-color: black;
+}

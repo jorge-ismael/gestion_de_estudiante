@@ -52,3 +52,16 @@ class usuario
     }
     
 }
+
+class Usuarios {
+        #Login
+        public $usuario;
+        public $contrasena;
+
+        public function __construct($usuario, $contrasena) {
+            $this->usuario = $usuario;
+            $this->contrasena = $contrasena;
+        }
+    }
+
+?>

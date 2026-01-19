@@ -1,15 +1,14 @@
 // para cargar header y footer
-fetch("global/template/header.html")
-    .then(r => r.text())
-    .then(t => document.getElementById("header").innerHTML = t);
+// fetch("global/template/header.html")
+//     .then(r => r.text())
+//     .then(t => document.getElementById("header").innerHTML = t);
 
-fetch("global/template/footer.html")
-    .then(r => r.text())
-    .then(t => document.getElementById("footer").innerHTML = t);
+import { login } from "../servicios/login.js";
 
-// las credenciales del administrador
-const adminUser = "admin";
-const adminPass = "12345";
+// fetch("global/template/footer.html")
+//     .then(r => r.text())
+//     .then(t => document.getElementById("footer").innerHTML = t);
+
 
 const form = document.getElementById("loginForm");
 const errorMsg = document.getElementById("errorMsg");
@@ -21,11 +20,7 @@ form.addEventListener("submit", function(event) {
     const password = document.getElementById("password").value;
 
     // para la validacion de la parte admin
-    if (username === adminUser && password === adminPass) {
-        window.location.href = "fronted/vista/templates/index.html";
-        return;
-    }
-
+    login(username, password);
     // para la validacion del estudiante
     const estudiantesSistema = JSON.parse(localStorage.getItem("estudiantesSistema")) || [];
 

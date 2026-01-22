@@ -46,7 +46,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
     else if(isset($accion) && $accion == "actualizarEstudiante"){
         try {
-            $data = json_decode($_POST['data'], true);
             $idEstudiante = $data["idEstudiante"];
             $idUsuario = $data["idUsuario"];
             $nombre = $data["nombre"];
@@ -78,7 +77,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }else if(isset($accion) && $accion == "eliminarEstudiante"){
         // Lógica para eliminar estudiante
         try {
-            $data = json_decode($_POST['data'], true);
+            $data = $data["data"];
             $idEstudiante = $data["idEstudiante"];
             $idUsuario = $data["idUsuario"];
 
@@ -112,9 +111,9 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo json_encode(["success" => true, "estudiantes" => []]);
         }
 
-    }else{
-        if(listarEstudiantes($conexion,)) {
-            echo json_encode(["success" => true, "estudiantes" => listarEstudiantes($conexion)]);
+    }else if(isset($_GET['getDatosEstudiante']) && $_GET['getDatosEstudiante'] == 'true') {
+        if(obtenerDatosEstudiante($conexion,$_GET['idUsuario'])) {
+            echo json_encode(["success" => true, "estudiantes" => obtenerDatosEstudiante($conexion,$_GET['idUsuario'])]);
         } else {
             echo json_encode(["success" => true, "estudiantes" => []]);
         }

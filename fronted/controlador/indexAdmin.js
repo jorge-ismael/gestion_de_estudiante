@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const btnCerrarSesion = document.getElementById("btnCerrarSesion");
   btnCerrarSesion.addEventListener("click", () => {
     localStorage.removeItem("usuario");
+    localStorage.removeItem("idUsuario");
     window.location.href = "../";
   });
 
@@ -187,6 +188,6 @@ async function editarTarea(id) {
 async function eliminar(id,idU) {
   eliminarEstudiante(id,idU);
   setTimeout(() => {
-    //window.location.reload();
+    window.location.reload();
   }, 100);
 }

@@ -49,4 +49,13 @@ function eliminarEstudiante($conexion, $idEstudiante, $usuario_id){
     return $stmt->execute();
 }
 
+function obtenerDatosEstudiante($conexion, $idUsuario){
+    $sql = "SELECT e.idEstudiante, e.nombre, e.apellidos, e.carrera, e.email, u.usuario, u.contrasena, u.idUsuario FROM estudiantes e JOIN usuarios u ON e.idUsuario = u.idUsuario WHERE u.idUsuario = :idUsuario";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bindParam(':idUsuario', $idUsuario);
+    $stmt->execute();
+    $estudiante = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $estudiante;
+}
+
 ?>

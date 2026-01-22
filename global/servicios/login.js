@@ -27,8 +27,9 @@ export async function login(usuario, password) {
       try {
         if (res && res.data.usuario) {
           localStorage.setItem("usuario", JSON.stringify(res.data.usuario));
+          localStorage.setItem("idUsuario", JSON.stringify(res.data.idUsuario));
           if(res.data.rol === "estudiante"){
-            window.location.href = "fronted/vista/templates/indexEstudiante.html";
+            window.location.href = "fronted/vista/templates/estudiante.html";
           }else if(res.data.rol === "administrador"){
             window.location.href = "fronted/vista/templates/indexAdmin.html";
           }else{

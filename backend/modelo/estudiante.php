@@ -1,63 +1,46 @@
 <?php
 class estudiante
 {
+    public $nombre;
+    public $apellidos;
+    public $carrera;
+    public $email;
+    public $usuario;
+    public $contrasena;
 
-    private $id;
-    private $nombre;
-    private $apellidos;
-    private $carrera;
-    private $email;
-
-    public function __construct($id, $nombre, $apellidos,  $carrera, $email)
+    public function __construct($nombre, $apellidos,  $carrera, $email, $usuario, $contrasena)
     {
-        $this->id = $id;
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
         $this->carrera = $carrera;
         $this->email = $email;
+        $this->usuario = $usuario;
+        $this->contrasena = $contrasena;
     }
-
-    function getid($id)
-    {
-        return $this->id;
-    }
-    function getNombre()
-    {
-        return $this->nombre;
-    }
-    function getApellidos()
-    {
-        return $this->apellidos;
-    }
-    function getCarrera()
-    {
-        return $this->carrera;
-    }
-    function getemail()
-    {
-        return $this->email;
-    }
-    
-    
-    function setid($id)
-    {
-        $this->id = $id;
-    }
-    function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-    }
-    function setApellidos($apellidos)
-    {
-        $this->apellidos = $apellidos;
-    }
-    function setCarrera($carrera)
-    {
-        $this->carrera = $carrera;
-    }
-    function setemail($email)
-    {
-        $this->email = $email;
-    }
-    
 }
+
+    class estudiante2
+{
+    public $idEstudiante;
+    public $idUsuario;
+    public $nombre;
+    public $apellidos;
+    public $carrera;
+    public $email;
+    public $usuario;
+    public $contrasena;
+
+    public function __construct($idEstudiante, $idUsuario, $nombre, $apellidos,  $carrera, $email, $usuario, $contrasena)
+    {
+        $this->idEstudiante = $idEstudiante;
+        $this->idUsuario = $idUsuario;
+        $this->nombre = $nombre;
+        $this->apellidos = $apellidos;
+        $this->carrera = $carrera;
+        $this->email = $email;
+        $this->usuario = $usuario;
+        $this->contrasena = $contrasena;
+    }
+}
+
+?>

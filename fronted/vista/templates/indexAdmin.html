@@ -1,30 +1,99 @@
-<div id="header"></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="../css/indexAdmin.css">
+    <link rel="stylesheet" href="../../../global/bootstrap-5.3.8-dist/css/bootstrap-grid.min.css">
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
 
-<h1>Panel del Administrador</h1>
+<header>
+    <h1>Gestión de Estudiantes - Universidad Afro-Americana de Africa Central</h1>
+    <h2>FACULTAD DE INGENIERIAS Y ARQUITECTURA</h2>
+</header>
 
-<form id="crearEstudianteForm">
-    <label>Usuario: <input type="text" id="inputUsuario" required></label><br>
-    <label>Contraseña: <input type="password" id="inputPassword" required></label><br>
-    <label>Nombre: <input type="text" id="inputNombre" required></label><br>
-    <label>Correo: <input type="email" id="inputCorreo" required></label><br>
-    <button type="submit">Crear estudiante</button>
-</form>
+<main>
 
-<h2>Estudiantes existentes</h2>
-<table border="1" id="tablaEstudiantes">
-    <thead>
-        <tr>
-            <th>Usuario</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+<button class="btn-agregar" id="btnAbrirModal">+ Registrar Estudiante</button>
 
-<button id="btnCerrarSesionAdmin">Cerrar sesión</button>
+<!-- MODAL -->
+<div id="modalRegistro" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitulo">Registrar Estudiante</h2>
+            <span class="close-btn" id="btnCerrarModal">&times;</span>
+        </div>
 
-<div id="footer"></div>
-<script src="../../../global/js/admin.js"></script>
+        <form id="formEstudiante">
+            <input type="hidden" name="idEstudiante" id="idEstudiante">
+            <input type="hidden" name="idUsuario" id="idUsuario">
 
+            <label>Nombre</label>
+            <input type="text" id="nombre" required>
 
+            <label>Apellidos</label>
+            <input type="text" id="apellidos" required>
+
+            <label>Carrera</label>
+            <select id="carrera" required>
+                <option value="" hidden>Seleccione una carrera</option>
+                <option>Ingeniería Informática</option>
+                <option>Ingeniería Civil</option>
+                <option>Ingeniería Mecánica</option>
+                <option>Ingeniería Industrial</option>
+                <option>Ingeniería Petroquímica</option>
+                <option>Ingeniería Agroindustrial</option>
+                <option>Ingeniería Eléctrica</option>
+                <option>Arquitectura</option>
+            </select>
+
+            <label>Email</label>
+            <input type="email" id="email" required>
+
+            <label>Usuario</label>
+            <input type="text" id="usuario" required>
+
+            <label>Contraseña</label>
+            <input type="password" id="password" required>
+
+            <button type="submit" id="btnGuardarEstudiante">Agregar</button>
+        </form>
+
+        <div id="mensaje"></div>
+    </div>
+</div>
+
+<section id="lista">
+    <h2>Lista de Estudiantes</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Carrera</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tablaEstudiantes">
+            <!-- Filas de estudiantes se agregarán aquí dinámicamente -->
+        </tbody>
+    </table>
+</section>
+
+</main>
+
+<footer>
+    <button class="btn-agregar" id="btnCerrarSesion" style="background-color: #6c757d; margin: 0;">Cerrar sesión</button>
+    <div id="footer"></div>
+</footer>
+
+<!--TJS ORIGINAL -->
+<script src="../../controlador/indexAdmin.js" type="module"></script>
+
+</body>
+</html>

@@ -47,7 +47,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     'success' => true,
                     'data' => [
                         "idUsuario" => $usuarioBD["idUsuario"],
-                        "usuario" => $usuarioBD["usuario"]
+                        "usuario" => $usuarioBD["usuario"],
+                        "rol" => $usuarioBD["rol"]
                         ]
                 ]);
 

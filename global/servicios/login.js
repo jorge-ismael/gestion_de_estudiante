@@ -27,7 +27,13 @@ export async function login(usuario, password) {
       try {
         if (res && res.data.usuario) {
           localStorage.setItem("usuario", JSON.stringify(res.data.usuario));
-          window.location.href = "fronted/vista/templates/index.html";
+          if(res.data.rol === "estudiante"){
+            window.location.href = "fronted/vista/templates/indexEstudiante.html";
+          }else if(res.data.rol === "administrador"){
+            window.location.href = "fronted/vista/templates/indexAdmin.html";
+          }else{
+            alert("Tipo de usuario no reconocido");
+          }
         } else {
           alert("Credenciales incorrectas3");
         }
